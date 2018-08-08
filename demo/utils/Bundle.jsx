@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
 
 class Bundle extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       mod: null
     }
   }
 
   componentWillMount() {
-    this.load(this.props);
+    this.load(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.load !== this.props.load) {
-      this.load(nextProps);
+      this.load(nextProps)
     }
   }
 
@@ -35,11 +34,11 @@ class Bundle extends React.Component {
   }
 
   render() {
-    return this.state.mod ? this.props.children(this.state.mod) : null;
+    return this.state.mod ? this.props.children(this.state.mod) : null
   }
 }
 
-const Loading = () => <div>Loading...</div>;
+const Loading = () => <div>Loading...</div>
 
 export default (loadComponent, props) => {
   return () => {

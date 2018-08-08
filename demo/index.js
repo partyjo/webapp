@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { HashRouter, Route } from 'react-router-dom';
-
-import routes from './routes';
-
-const App = () => (
-    <HashRouter>
-        {routes}
-    </HashRouter>
-)
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { HashRouter } from 'react-router-dom'
+import routes from './routes'
+import Layout from 'layouts/index';
 
 ReactDOM.render(
-    <App />,
+    <Layout>
+			<HashRouter>
+        {routes}
+    	</HashRouter>
+		</Layout>,
     document.getElementById('app')
-);
+)

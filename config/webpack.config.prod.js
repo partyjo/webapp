@@ -1,12 +1,12 @@
-const path = require('path');
-const webpack = require('webpack');
-const htmlwebpackplugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const htmlwebpackplugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-const webpackMerge = require('webpack-merge');
-const webpackBaseConfig = require('./webpack.config.base');
-const utils = require('./utils');
+const webpackMerge = require('webpack-merge')
+const webpackBaseConfig = require('./webpack.config.base')
+const utils = require('./utils')
 
 const webpackConfig = webpackMerge(webpackBaseConfig, {
     mode: 'production',
@@ -55,4 +55,4 @@ const webpackConfig = webpackMerge(webpackBaseConfig, {
     }
 })
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

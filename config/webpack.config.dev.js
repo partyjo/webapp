@@ -1,9 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const htmlwebpackplugin = require('html-webpack-plugin');
-const webpackMerge = require('webpack-merge');
-const webpackBaseConfig = require('./webpack.config.base');
-const utils = require('./utils');
+const path = require('path')
+const webpack = require('webpack')
+const htmlwebpackplugin = require('html-webpack-plugin')
+const webpackMerge = require('webpack-merge')
+const webpackBaseConfig = require('./webpack.config.base')
+const utils = require('./utils')
 
 const webpackConfig = webpackMerge(webpackBaseConfig, {
     mode: 'development',
@@ -30,4 +30,4 @@ const webpackConfig = webpackMerge(webpackBaseConfig, {
     }
 })
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

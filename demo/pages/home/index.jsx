@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Button } from 'antd-mobile';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { Button } from 'antd-mobile'
 
 export default class Home extends React.Component {
     render() {

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import Bundle from './components/Bundle';
+import React from 'react'
+import { Route } from 'react-router-dom'
+import Bundle from 'utils/Bundle'
 
-import HomePage from 'bundle-loader?lazy!./pages/home/index';
+import HomePage from 'bundle-loader?lazy!./pages/home/index'
 
 export default (
     <div>
