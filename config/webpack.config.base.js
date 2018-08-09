@@ -38,7 +38,14 @@ const webpackConfig = {
 						}
 					}
 				]
-			}
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 10240
+				}
+			},
 		]
 	},
 	resolve: {

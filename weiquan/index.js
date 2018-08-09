@@ -6,9 +6,9 @@ import Layout from 'layouts/index';
 
 ReactDOM.render(
     <Layout>
-			<HashRouter>
-        {routes}
-    	</HashRouter>
-		</Layout>,
+        <HashRouter>
+            {routes}
+        </HashRouter>
+    </Layout>,
     document.getElementById('app')
 )
