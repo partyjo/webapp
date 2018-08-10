@@ -1,5 +1,7 @@
+const project = process.argv[4] || 'demo'
+
 module.exports = {
-  project: process.argv[4] || 'demo',
+  project: project,
   port: 9000,
-  publicPath: '/'
+  publicPath: process.env.NODE_ENV === 'develop' ? '/' : `//partyjo.nextdog.cc/${project}/`
 }

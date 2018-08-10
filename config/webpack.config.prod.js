@@ -16,7 +16,7 @@ const webpackConfig = webpackMerge(webpackBaseConfig, {
         publicPath: utils.publicPath,
     },
     plugins: [
-        new CleanWebpackPlugin(path.resolve(__dirname, '../dist/')),
+        new CleanWebpackPlugin(path.resolve(__dirname, '../dist')),
         new htmlwebpackplugin({
             filename: 'index.html',
             template: path.resolve(__dirname, `../${utils.project}/index.html`)
