@@ -10,7 +10,7 @@ export default (
     <div>
         <Route path="/" exact component={Bundle(HomePage)} />
         <Route path="/home" component={Bundle(HomePage)} />
-        <Route path="/category/:id" component={Bundle(categoryPage)} />
-        <Route path="/weiquan/:id/:cid" component={Bundle(weiquanPage)} />
+        <Route path="/category/:pid" component={Bundle(categoryPage)} />
+        <Route path="/weiquan/:pid/:cid" component={Bundle(weiquanPage)} />
     </div>
 )

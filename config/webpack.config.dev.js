@@ -16,7 +16,16 @@ const webpackConfig = webpackMerge(webpackBaseConfig, {
     devServer: {
         contentBase: path.resolve(__dirname, '../dist/'),
         port: utils.port,
-        open: false
+        open: false,
+        proxy: {
+            '/api': {
+                target: 'http://partyjo.nextdog.cc/server/weiquan/', 
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '/'
+                }
+            }
+        }
     },
     plugins: [
         new htmlwebpackplugin({

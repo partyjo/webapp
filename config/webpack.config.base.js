@@ -52,7 +52,7 @@ const webpackConfig = {
 		extensions: ['.jsx', '.js'],
 		alias: {
 			'libs': path.join(__dirname, '../libs/'),
-			'api': path.join(__dirname, `../${utils.project}/api/`),
+			'http': path.join(__dirname, `../${utils.project}/http/`),
 			'components': path.join(__dirname, `../${utils.project}/components/`),
 			'layouts': path.join(__dirname, `../${utils.project}/layouts/`),
 			'pages': path.join(__dirname, `../${utils.project}/pages/`),

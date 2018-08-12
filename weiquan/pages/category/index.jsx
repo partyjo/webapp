@@ -38,15 +38,15 @@ class Category extends React.Component {
         }
     }
     render() {
-        const id = this.props.match.params.id
-        const data = this.state.data[id];
+        const pid = this.props.match.params.pid
+        const data = this.state.data[pid];
         return (
             <div style={{ padding: '150px 0' }}>
                 <div className='container'>
                     {
                         data.map(item => {
                             return (
-                                <Link key={item.id} to={item.link+ '/' + id + '/' + item.id}>{item.name}</Link>
+                                <Link key={item.id} to={item.link+ '/' + pid + '/' + item.id}>{item.name}</Link>
                             )
                         })
                     }

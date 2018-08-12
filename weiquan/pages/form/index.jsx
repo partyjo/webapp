@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { Button, List, InputItem, TextareaItem } from 'antd-mobile'
+import ajax from 'http/index'
+import { Button, List, InputItem, TextareaItem, Toast } from 'antd-mobile'
 import './index.less'
 
 class weiquanForm extends React.Component {
@@ -8,20 +9,29 @@ class weiquanForm extends React.Component {
         super(props)
         this.state = {
             formData: {
-                id: props.match.params.id,
-                cid: props.match.params.cid,
+                pid: parseInt(props.match.params.pid),
+                cid: parseInt(props.match.params.cid),
                 name: '',
                 mobile: '',
                 needs: ''
             }
         }
-        this.handleClick = this.handleClick.bind(this)
     }
     handleClick() {
         const formData = this.state.formData
-        if (formData.mobile.length != 11) {
-            alert('联系电话格式不正确')
-        }
+        ajax({
+            method: 'post',
+            url: '/forms/add',
+            data: formData
+        }).then(res => {
+            if (res.code === 0) {
+                Toast.success('提交成功', 5, function() {
+                    window.location.reload()
+                })
+            } else if (res.code === 1001) {
+                Toast.fail(res.msg)
+            }
+        })
     }
     handleChange(key, value) {
         const formData = this.state.formData
@@ -40,7 +50,7 @@ class weiquanForm extends React.Component {
                         <InputItem value={formData.mobile} placeholder='您的联系电话' onChange={this.handleChange.bind(this, 'mobile')}></InputItem>
                         <TextareaItem value={formData.needs} rows={5} placeholder='您的主要诉求' onChange={this.handleChange.bind(this, 'needs')}></TextareaItem>
                     </List>
-                    <Button type='primary' onClick={this.handleClick}>提交</Button>
+                    <Button type='primary' onClick={this.handleClick.bind(this)}>提交</Button>
                 </div>
             </div>
         )
