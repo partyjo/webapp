@@ -17,7 +17,7 @@ class Category extends React.Component {
                     {
                         id: 2,
                         name: '妇女之声',
-                        link: '/'
+                        link: '/article/list'
                     }
                 ],
                 2: [
@@ -44,11 +44,10 @@ class Category extends React.Component {
             <div style={{ padding: '150px 0' }}>
                 <div className='container'>
                     {
-                        data.map(item => {
-                            return (
-                                <Link key={item.id} to={item.link+ '/' + pid + '/' + item.id}>{item.name}</Link>
-                            )
-                        })
+                        data.map(item => item.link === '/weiquan' ? 
+                            <Link key={item.id} to={item.link+ '/' + pid + '/' + item.id}>{item.name}</Link> :
+                            <Link key={item.id} to={item.link}>{item.name}</Link>
+                        )
                     }
                 </div>
             </div>

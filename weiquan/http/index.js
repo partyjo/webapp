@@ -4,8 +4,7 @@ import { Toast } from 'antd-mobile'
 // 创建实例
 const ajax = axios.create({
   baseURL: process.env.NODE_ENV === 'develop' ? '/api/' : 'http://partyjo.nextdog.cc/server/weiquan/',
-  timeout: 1000,
-  headers: {'X-Custom-Header': 'foobar'}
+  timeout: 1000
 });
 
 // 请求拦截器
