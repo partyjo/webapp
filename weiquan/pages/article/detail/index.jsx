@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { Button } from 'antd-mobile'
+import { Button, Toast } from 'antd-mobile'
 import ajax from 'http/index'
 import './index.less'
 
@@ -8,9 +8,10 @@ class ArticleDetail extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: {}
+            data: {
+                
+            }
         }
-        this.thumb = 'http://partyjo.nextdog.cc/server/public/upload/20180816/9ab9006917cec4501672386c44d2ec12.jpeg'
     }
     componentWillMount () {
         this.getdata({
@@ -39,10 +40,10 @@ class ArticleDetail extends React.Component {
                 <div style={{ height: '100%', backgroundColor: 'rgba(255, 255, 255, 0.3)', padding: '20px', boxSizing: 'border-box', borderRadius: 10 }}>
                     <div className='article-detail-container'>
                         <div className='title'>{data.title}</div>
-                        <img className='thumb' src={data.thumb ? data.thumb: this.thumb} alt='thumb'/>
+                        <img className='thumb' src={data.thumb} alt='thumb'/>
                         <div className='info'>{data.author + '  ' + data.update_time}</div>
-                        <div className='contenbt' dangerouslySetInnerHTML= {{ __html:data.content }}></div>
-                        {data.Link ? <a className='link' href={data.link}>阅读原文</a> : ''}
+                        <div className='content' dangerouslySetInnerHTML= {{ __html: data.link ? data.summary: data.content }}></div>
+                        <div>{data.link ? <a className='link' href={data.link} target='_blank'>阅读原文</a> : ''}</div>
                     </div>
                 </div>
             </div>
